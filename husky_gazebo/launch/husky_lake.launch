@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find husky_gazebo)/gazebo_maps/travel_1/lake.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="x" value="-41.0"/>
+    <arg name="y" value="-16.0"/>
+    <arg name="z" value="5.0"/>
+    <arg name="yaw" value="0.0"/>
+  </include>
+
+</launch>

@@ -1,0 +1,24 @@
+services:
+  sim:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: dev
+    image: dongjineee/sim:01
+    stdin_open: true
+    tty: true
+    network_mode: "host"
+    volumes:
+      - ../husky_control:/root/sim/src/husky_sim/husky_control
+      - ../husky_description:/root/sim/src/husky_sim/husky_description
+      - ../husky_desktop:/root/sim/src/husky_sim/husky_desktop
+      - ../husky_gazebo:/root/sim/src/husky_sim/husky_gazebo
+      - ../husky_msgs:/root/sim/src/husky_sim/husky_msgs
+      - ../husky_navigation:/root/sim/src/husky_sim/husky_navigation
+      - ../husky_simulator:/root/sim/src/husky_sim/husky_simulator
+      - ../husky_viz:/root/sim/src/husky_sim/husky_viz
+      - ../setup:/root/sim/src/husky_sim/setup
+      
+    environment:
+      - ROS_IP=127.0.0.1
+    command: "/bin/bash"
