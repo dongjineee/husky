@@ -18,4 +18,7 @@
     <arg name="yaw" value="0.0"/>
   </include>
 
+  <arg name="rviz" default="husky"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find husky_gazebo)/rviz/$(arg rviz).rviz" />
 </launch>
