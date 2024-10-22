@@ -44,18 +44,23 @@ husky_docker_run
 =====
 ```bash
 git clone https://github.com/dongjineee/husky.git
+
 **create gazebo_maps_folder**
+
 cd husky/docker/
 docker compose -f docker-compose-gui-nvidia.yaml build  
 docker compose -f docker-compose-gui-nvidia.yaml up -d  
 docker compose -f docker-compose-gui-nvidia.yaml exec sim /bin/bash  
 
 ##firtst build
-cd src/husky/setup
+cd src/husky_sim/setup
 source first_run.sh
 
 ##run maps
 roslaunch husky_gazebo husky_playpen.launch
+
+## To use the specified map, you need to add it separately and place it in the `husky_gazebo/gazebo_maps` directory.
+
 roslaunch husky_gazebo husky_moon.launch
 roslaunch husky_gazebo husky_lake.launch
 ```
