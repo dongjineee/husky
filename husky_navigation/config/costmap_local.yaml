@@ -2,5 +2,6 @@ global_frame: odom
 rolling_window: true
 
 plugins:
+  - {name: static_layer, type: "costmap_2d::StaticLayer"}
   - {name: obstacles_laser,           type: "costmap_2d::ObstacleLayer"}
   - {name: inflation,                 type: "costmap_2d::InflationLayer"}
