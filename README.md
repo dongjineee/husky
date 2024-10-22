@@ -43,15 +43,15 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 husky_docker_run
 =====
 ```bash
-git clone https://github.com/dongjineee/husky_sim.git
+git clone https://github.com/dongjineee/husky.git
 **create gazebo_maps_folder**
-cd husky_sim/docker/
+cd husky/docker/
 docker compose -f docker-compose-gui-nvidia.yaml build  
 docker compose -f docker-compose-gui-nvidia.yaml up -d  
 docker compose -f docker-compose-gui-nvidia.yaml exec sim /bin/bash  
 
 ##firtst build
-cd src/husky_sim/setup
+cd src/husky/setup
 source first_run.sh
 
 ##run maps
